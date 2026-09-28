@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>03 — Build my pathway (onboarding)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#EEE5C2; --yellow:#FAD564; --lime:#D3DC7C; --sage:#8EBD9D; --navy:#1B475D;
+  --bg:#FFFDF8; --card:#FFFFFF; --line:#E9E3D0; --text:#233A44; --text2:#7A8890;
+  --on-navy:#FFFFFF; --on-yellow:#3A2E05; --radius:18px;
+  --sans:"Nunito Sans","Segoe UI",Arial,sans-serif;
+  --display:"Fredoka","Quicksand","Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{color-scheme:light}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15.5px;line-height:1.62;min-height:100vh}
+a{color:var(--navy)}
+h1,h2,h3{margin:0;font-family:var(--display);font-weight:600;letter-spacing:-.01em}
+p{margin:0}
+svg{display:block}
+.scrim{min-height:100vh;background:radial-gradient(ellipse at top left,#FBF2DA 0%,var(--bg) 55%);display:flex;align-items:center;justify-content:center;padding:30px}
+.modal{background:var(--card);border-radius:26px;width:100%;max-width:640px;border:1px solid var(--line);box-shadow:0 20px 60px -30px rgba(27,71,93,.25);overflow:hidden}
+.mhead{background:var(--navy);padding:20px 26px;display:flex;justify-content:space-between;align-items:center;gap:12px;position:relative;overflow:hidden}
+.mhead svg.blob{position:absolute;top:-30px;right:-20px}
+.mhead h2{color:#fff;font-size:1.15rem;position:relative;z-index:1}
+.xb{background:rgba(255,255,255,.15);border:0;width:30px;height:30px;border-radius:9px;color:#fff;font-size:17px;position:relative;z-index:1}
+.bd{padding:26px}
+.bar{height:6px;background:#F2EFE3;border-radius:4px;overflow:hidden;margin-bottom:20px;display:flex;gap:4px}
+.bar i{flex:1;border-radius:4px;background:#F2EFE3}
+.bar i.on{background:var(--sage)}
+.qtop{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.qtop h3{font-size:1.15rem;color:var(--navy)}
+.tiny{font-size:12.5px;color:var(--text2);font-weight:700}
+.qsub{color:var(--text2);margin-top:6px;font-size:14px}
+.opts{display:grid;gap:10px;margin-top:20px}
+.opt{text-align:left;background:var(--bg);border:1.5px solid var(--line);border-radius:14px;padding:14px 16px;display:flex;align-items:center;gap:12px}
+.opt.sel{border-color:var(--navy);background:var(--cream)}
+.opt .ic{width:34px;height:34px;border-radius:10px;background:#fff;border:1.5px solid var(--line);display:grid;place-items:center;flex:none}
+.opt b{display:block;font-weight:700;font-size:14.5px}
+.opt small{color:var(--text2)}
+.check{width:20px;height:20px;border-radius:50%;border:2px solid var(--line);flex:none;margin-left:auto}
+.opt.sel .check{border-color:var(--navy);background:var(--navy);position:relative}
+.opt.sel .check:after{content:"";position:absolute;inset:0;margin:auto;width:8px;height:8px;border-radius:50%;background:#fff}
+.mrow{display:flex;gap:10px;align-items:center;margin-top:24px;flex-wrap:wrap}
+.btn{background:var(--navy);color:#fff;border:0;border-radius:12px;padding:11px 22px;font-size:14.5px;font-weight:700}
+.btn.soft{background:var(--yellow);color:var(--on-yellow)}
+.btn.ghost{background:none;color:var(--navy);border:1.5px solid var(--line)}
+</style>
+</head>
+<body>
+<div class="scrim">
+  <div class="modal">
+    <div class="mhead">
+      <svg class="blob" width="160" height="160" viewBox="0 0 200 200"><circle cx="100" cy="100" r="90" fill="#FAD564" opacity=".22"/></svg>
+      <h2>Build my pathway</h2>
+      <button class="xb">×</button>
+    </div>
+    <div class="bd">
+      <div class="bar"><i class="on"></i><i class="on"></i><i></i><i></i></div>
+      <div class="qtop"><h3>How far along are you in this area?</h3><span class="tiny">Step 2 of 4</span></div>
+      <p class="qsub">This decides whether the pathway starts at Foundation or skips past it.</p>
+
+      <div class="opts">
+        <button class="opt">
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#7A8890" stroke-width="1.8"/></svg></div>
+          <span><b>Just starting out</b><small>No course in this area yet</small></span>
+          <span class="check"></span>
+        </button>
+        <button class="opt sel">
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M3 12h18" stroke="#1B475D" stroke-width="1.6" stroke-linecap="round" opacity=".5"/><circle cx="12" cy="12" r="9" stroke="#1B475D" stroke-width="1.8"/></svg></div>
+          <span><b>I know some basics</b><small>A semester or a self-taught start</small></span>
+          <span class="check"></span>
+        </button>
+        <button class="opt">
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 13l5 5L20 6" stroke="#7A8890" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span><b>Comfortable with fundamentals</b><small>I want depth, not introductions</small></span>
+          <span class="check"></span>
+        </button>
+      </div>
+
+      <div class="mrow">
+        <button class="btn ghost">Back</button>
+        <button class="btn soft">Continue</button>
+        <span class="tiny" style="font-weight:400">Goal: Machine Learning Engineer</span>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
